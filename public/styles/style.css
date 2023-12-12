@@ -1,0 +1,65 @@
+.gradient-custom {
+  background: radial-gradient(50% 123.47% at 50% 50%, #01ab7c 0%, #1c2c28 100%),
+    linear-gradient(121.28deg, #01ab7c 0%, #01ab7c 100%),
+    linear-gradient(360deg, #01ab7c 0%, #01ab7c 100%),
+    radial-gradient(100% 164.72% at 100% 100%, #01ab7c 0%, #85d1bd 100%),
+    radial-gradient(100% 148.07% at 0% 0%, #01ab7c 0%, #7ccfb9 100%);
+  background-blend-mode: screen, color-dodge, overlay, difference, normal;
+}
+
+.fix {
+  width: 200px;
+}
+.btn-add {
+  background-color: #01ab7c;
+  border-color: #01ab7c;
+}
+.btn-add:hover {
+  background-color: #05ce95;
+  border-color: #05ce95;
+}
+h1,
+p,
+a,
+li,
+button,
+::placeholder,
+input::selection {
+  color: #233036;
+  font-weight: 500;
+  font-family: 'Kanit', sans-serif;
+}
+.copyright{
+  text-align: center;
+}
+.strikethrough:checked + span{
+  text-decoration:line-through
+}
+.removeBtn{
+  background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 5px; /* Szélesség */
+  border-radius: 15px; /* Mind a négy sarok 15 pixel sugarú lekerekítése */
+
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* A görgetősáv háttérszíne */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* A görgetősáv hüvelykujjszínének */
+  border-radius: 10px; /* Sarkok lekerekítése *
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* A görgetősáv hüvelykujjszínének hover állapotban */
+}

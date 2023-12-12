@@ -1,0 +1,88 @@
+<%-include ("partials/header.ejs") %>
+
+<!-- Main -->
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100 p-5">
+    <div class="col col-xl-10">
+      <div class="card">
+        <div class="card-body p-5">
+          <div class="d-flex justify-content-center align-items-center mb-4">
+            <img src="images/<%=gifNum%>.gif" alt="img" class="fix" />
+          </div>
+          <div class="d-flex justify-content-center align-items-center mb-4">
+            <h1 class="header"><%=header%></h1>
+          </div>
+          <form action="/<%=URL%>" method="POST" class="d-flex justify-content-center align-items-center mb-4">
+            <div class="form-outline ">
+              <input type="text" id="form2" class="form-control form-label px-3" placeholder="New task..." name="input" />
+            </div>
+            <button type="submit" class="btn btn-success ms-2 mb-2 btn-add" value="OK">
+              Add
+            </button>
+            <br />
+
+          </form>
+              <% if (locals.text && locals.textArr) { %>
+                <div class="mx-auto overflow-auto" style="max-height: 200px;">
+                <% textArr.forEach((text) => { %>
+                  
+
+                  <form action="/delete" method="POST">
+                    
+                  <ul class="list-group mb-0">
+                    <li
+                      class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
+                      <div class="d-flex align-items-center">
+                        <input type="hidden" name="delete" value="<%= text %>"/>
+                        <input class="form-check-input me-3 strikethrough" type="checkbox">
+                        <span class="me-3"><%= text %></span>
+                      </div>
+                      <button class="removeBtn"  type="submit" data-mdb-toggle="tooltip" title="Remove item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                         </svg>
+                       </button>
+                    </li>
+                  </ul>
+                
+                </form>
+              
+
+                <% }) %>
+              </div>
+            <% } else if (locals.textArr) { %>
+              <div class="mx-auto overflow-auto" style="max-height: 200px;">
+
+              <% textArr.forEach((text) => { %>
+
+                <form action="/delete" method="POST">
+                 
+                  <ul class="list-group mb-0">
+                    <li
+                      class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
+                      <div class="d-flex align-items-center">
+                        <input type="hidden" name="delete" value="<%= text %>"/>
+                        <input class="form-check-input me-3 strikethrough" type="checkbox"/>
+                        <span class="me-3"><%= text %></span>
+                      </div>
+                      
+                      <button class="removeBtn" type="submit" data-mdb-toggle="tooltip" title="Remove item">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                      </button>
+                    </li>
+                  </ul>
+                
+                </form>
+              
+              <% }) %>
+            </div>
+            <% } %> 
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <%-include ("partials/footer.ejs") %>
+</div>
